@@ -1,0 +1,16 @@
+haha: main.o imgutil.o ColorLayout.o
+	g++ main.o imgutil.o ColorLayout.o ColorQuant.o -o haha
+
+main.o: main.cpp imgutil.h
+	g++ -c main.cpp
+imgutil.o:imgutil.c imgutil.h
+	g++ -c imgutil.c
+ColorLayout.o: ColorLayout.cpp ColorLayout.h
+	g++ -c ColorLayout.cpp
+ColorQuant.o: ColorQuant.cpp ColorQuant.h
+	g++ -c ColorQuant.cpp
+ 
+clean:
+	rm -f haha *.o
+
+

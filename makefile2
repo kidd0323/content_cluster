@@ -1,0 +1,11 @@
+patient: patient.cpp Feature.h Convert.o Frame.o
+	g++ -I /usr/local/include/opencv -L /usr/local/lib -lm -lcv -lhighgui -lcvaux -lml -lstdc++ -o patient patient.cpp Feature.h Convert.o
+Frame.o: Frame.cpp Frame.h Convert.o
+	g++ -I /usr/local/include/opencv -L /usr/local/lib -lm -lcv -lhighgui -lcvaux -lml -lstdc++ -o Frame.o Frame.cpp Frame.h Convert.o
+Convert.o: Convert.h Convert.cpp vopio.o
+	g++ -I /usr/local/include/opencv -L /usr/local/lib -lm -lcv -lhighgui -lcvaux -lml -lstdc++ -o Convert.o Convert.cpp Convert.h vopio.o
+vopio.o: vopio.cpp vopio.h address.h momusys.h
+	g++ -I /usr/local/include/opencv -L /usr/local/lib -lm -lcv -lhighgui -lcvaux -lml -lstdc++ -o vopio.o vopio.cpp vopio.h address.h momusys.h
+
+
+
